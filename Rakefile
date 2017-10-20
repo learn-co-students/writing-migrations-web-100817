@@ -1,3 +1,8 @@
+task :environment do
+  require_relative 'config/environment'
+end
+
+
 require 'active_record'
 include ActiveRecord::Tasks
 
@@ -10,9 +15,6 @@ task :console => :environment do
   Pry.start
 end
 
-task :environment do
-  require_relative 'config/environment'
-end
 
 Rake::Task["db:drop"].clear
 
